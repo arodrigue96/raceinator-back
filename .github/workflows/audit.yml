@@ -24,3 +24,6 @@ jobs:
 
       - name: 💾 Install modules
         run: npm ci
+
+      - name: 🔍 ESLint validation
+        run: npx eslint src --max-warnings 0
