@@ -1,7 +1,7 @@
 import chalk from "chalk";
 import startServer from "./server/startServer.js";
-import { app } from "./server/index.js";
 import connectToDatabase from "./database/connectToDatabase.js";
+import { app } from "./server/middlewares.js";
 
 const port = process.env.PORT;
 const databaseUrl = process.env.DATA_BASE;

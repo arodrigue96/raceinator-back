@@ -26,5 +26,12 @@
     "ecmaVersion": "latest",
     "sourceType": "module"
   },
-  "rules": {}
+  "rules": {
+    "new-cap": [
+      "error",
+      {
+        "capIsNewExceptionPattern": "Router"
+      }
+    ]
+  }
 }
