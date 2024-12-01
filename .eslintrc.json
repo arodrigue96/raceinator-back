@@ -1,27 +1,27 @@
 {
   "env": {
-    "browser": true,
+    "node": true,
     "es2021": true
   },
   "extends": ["xo", "prettier"],
   "overrides": [
     {
       "extends": ["xo-typescript", "prettier"],
-      "files": "*.ts",
+      "files": ["*.ts", "*.tsx"],
       "rules": {
         "no-unused-vars": "error",
         "@typescript-eslint/consistent-type-definitions": ["error", "interface"]
-      }
-    },
-    {
-      "files": "*.ts",
-      "rules": {
-        "@typescript-eslint/naming-convention": "off"
       },
-      "excludedFiles": ["model/**/*.ts"]
+      "overrides": [
+        {
+          "files": "src/team/model/*.ts",
+          "rules": {
+            "@typescript-eslint/naming-convention": "off"
+          }
+        }
+      ]
     }
   ],
-
   "parserOptions": {
     "ecmaVersion": "latest",
     "sourceType": "module"

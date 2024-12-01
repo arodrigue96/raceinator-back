@@ -1,4 +1,4 @@
-export interface Team {
+export interface TeamStructure {
   id: string;
   name: string;
   ridersNames: string[];
@@ -7,5 +7,5 @@ export interface Team {
   altImageText: string;
   description: string;
   debutYear: number;
-  isOficialTeam: boolean;
+  isOfficialTeam: boolean;
 }

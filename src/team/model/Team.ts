@@ -1,5 +1,5 @@
 import { model } from "mongoose";
-import teamSchema from "./teamSchema";
+import teamSchema from "./teamSchema.js";
 
 const Team = model("Team", teamSchema, "teams");
 
