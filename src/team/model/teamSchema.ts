@@ -1,13 +1,13 @@
 import { Schema } from "mongoose";
-import { type Team } from "../types";
+import { type TeamStructure } from "../types";
 
-const teamSchema = new Schema<Partial<Team>>({
+const teamSchema = new Schema<TeamStructure>({
   name: {
     type: String,
     required: true,
   },
   ridersNames: {
-    type: Array,
+    type: [String],
     required: true,
   },
   championshipTitles: {
@@ -30,7 +30,7 @@ const teamSchema = new Schema<Partial<Team>>({
     type: Number,
     required: true,
   },
-  isOficialTeam: {
+  isOfficialTeam: {
     type: Boolean,
     required: true,
   },
