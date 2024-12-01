@@ -29,6 +29,7 @@
   "dependencies": {
     "chalk": "^4.1.2",
     "express": "^4.21.1",
+    "mongoose": "^8.8.3",
     "prettier": "^3.4.1"
   }
 }
