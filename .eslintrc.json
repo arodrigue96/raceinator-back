@@ -7,6 +7,7 @@
   "overrides": [
     {
       "extends": ["xo-typescript", "prettier"],
+      "excludedFiles": ["jest.config.ts"],
       "files": ["*.ts", "*.tsx"],
       "rules": {
         "no-unused-vars": "error",
