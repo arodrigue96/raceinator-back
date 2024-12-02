@@ -1,5 +1,5 @@
 export interface TeamStructure {
-  id: string;
+  _id: string;
   name: string;
   ridersNames: string[];
   championshipTitles: number;
