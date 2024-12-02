@@ -3,7 +3,7 @@ import chalk from "chalk";
 
 const startServer = (app: Express, port: number) => {
   app.listen(port, () => {
-    console.log(chalk.green(`Listenting in port: ${port}`));
+    console.log(chalk.green(`Listening in port: ${port}`));
   });
 };
 
