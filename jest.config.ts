@@ -8,7 +8,8 @@ const jestConfig: JestConfigWithTsJest = {
     "**/*.ts",
     "!server/startServer.ts",
     "!index.ts",
-    "!database/connectToDatabase.ts",
+    "!database/**.ts",
+    "!team/model/**.ts",
   ],
   coverageDirectory: "../coverage",
 
