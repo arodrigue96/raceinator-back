@@ -24,6 +24,7 @@
     "@types/express": "^5.0.0",
     "@types/jest": "^29.5.14",
     "@types/morgan": "^1.9.9",
+    "@types/supertest": "^6.0.2",
     "@typescript-eslint/eslint-plugin": "7.18",
     "@typescript-eslint/parser": "7.18",
     "eslint": "^8.57.1",
@@ -32,13 +33,16 @@
     "eslint-config-xo-typescript": "^5.0.0",
     "husky": "^9.1.7",
     "jest": "^29.7.0",
+    "supertest": "^7.0.0",
     "ts-jest": "^29.2.5",
+    "ts-jest-resolver": "^2.0.1",
     "ts-node": "^10.9.2",
     "typescript": "^5.7.2"
   },
   "dependencies": {
     "chalk": "^4.1.2",
     "express": "^4.21.1",
+    "mongodb-memory-server": "^10.1.2",
     "mongoose": "^8.8.3",
     "morgan": "^1.10.0",
     "prettier": "^3.4.1"
