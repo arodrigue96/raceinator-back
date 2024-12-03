@@ -1,7 +1,7 @@
 import express from "express";
 import morgan from "morgan";
 import teamsRouter from "../team/router/teamsRouter.js";
-import handlePathErrors from "./errors/handlePathErrors/handlePathErrors.js";
+import handleEndpointNotFoundError from "./errors/handleEndpointNotFoundError/handleEndpointNotFoundError.js";
 
 export const app = express();
 
@@ -11,4 +11,4 @@ app.use(morgan("dev"));
 
 app.use("/teams", teamsRouter);
 
-app.use(handlePathErrors);
+app.use(handleEndpointNotFoundError);

@@ -1,7 +1,7 @@
 import { type NextFunction, type Request, type Response } from "express";
 import ServerError from "../ServerError/ServerError.js";
 
-const handlePathErrors = (
+const handleEndpointNotFoundError = (
   _req: Request,
   _res: Response,
   next: NextFunction,
@@ -11,4 +11,4 @@ const handlePathErrors = (
   next(error);
 };
 
-export default handlePathErrors;
+export default handleEndpointNotFoundError;
