@@ -10,7 +10,13 @@
       "name": "getTeams",
       "request": {
         "method": "GET",
-        "header": []
+        "header": [],
+        "url": {
+          "raw": "https://aniol-rodriguez-202409-back.onrender.com/teams",
+          "protocol": "https",
+          "host": ["aniol-rodriguez-202409-back", "onrender", "com"],
+          "path": ["teams"]
+        }
       },
       "response": []
     }
