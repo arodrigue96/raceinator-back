@@ -1,3 +1,3 @@
 export interface ServerErrorStructure {
-  statusCode?: number;
+  statusCode: number;
 }

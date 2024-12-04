@@ -5,6 +5,10 @@ on:
       - main
   pull_request:
     types: [opened, synchronize, reopened]
+
+env:
+  ALLOWED_URLS: ${{ vars.ALLOWED_URLS }}
+
 jobs:
   sonarcloud:
     name: SonarQube Cloud

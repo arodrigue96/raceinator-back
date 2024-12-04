@@ -46,33 +46,35 @@ describe("Given the handleGeneralErrors middleware", () => {
     });
   });
 
-  describe("When it receives an error with the message 'Type Error' and without status code", () => {
-    const error = new ServerError("Type Error", 500);
+  describe("When it receives an error with the message 'Type Error'", () => {
+    const error = new Error("Type Error");
 
     test("Then it should call status method with status code 500", () => {
       const expectedStatusCode = 500;
 
       handleGeneralErrors(
-        error,
+        error as ServerError,
         request as Request,
         response as Response,
         _next,
       );
 
-      expect(response.status).toHaveBeenCalledWith(expectedStatusCode);
+      expect(response.status).toHaveBeenLastCalledWith(expectedStatusCode);
     });
 
     test("Then it should call json method with message 'Server Error'", () => {
-      const expectedErrorMessage = { message: "Server Error" };
+      const expectedErrorMessage = "Server Error";
 
       handleGeneralErrors(
-        error,
+        error as ServerError,
         request as Request,
         response as Response,
         _next,
       );
 
-      expect(response.json).toHaveBeenCalledWith(expectedErrorMessage);
+      expect(response.json).toHaveBeenCalledWith({
+        message: expectedErrorMessage,
+      });
     });
   });
 });
