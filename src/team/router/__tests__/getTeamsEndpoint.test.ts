@@ -2,7 +2,7 @@ import { MongoMemoryServer } from "mongodb-memory-server";
 import request from "supertest";
 import mongoose from "mongoose";
 import connectToDatabase from "../../../database/connectToDatabase";
-import { app } from "../../../server/middlewares";
+import { app } from "../../../server";
 import Team from "../../model/Team.js";
 import { type TeamStructure } from "../../types";
 
