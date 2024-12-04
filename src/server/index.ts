@@ -11,19 +11,25 @@ app.disable("x-powered-by");
 
 app.use(morgan("dev"));
 
-const urls = process.env.ALLOWED_URLS?.split(",");
+const enviroment = process.env.NODE_ENV;
 
-if (!urls) {
-  throw new Error(
-    chalk.bgRed("Enviroment variable ALLOWED_URLS does not exist"),
+if (enviroment !== "test") {
+  const url = process.env.ALLOWED_URLS;
+
+  if (!url) {
+    throw new Error(
+      chalk.bgRed("Enviroment variable ALLOWED_URLS does not exist"),
+    );
+  }
+
+  const urls = url.split(",");
+
+  app.use(
+    cors({
+      origin: urls,
+    }),
   );
 }
-
-app.use(
-  cors({
-    origin: urls,
-  }),
-);
 
 app.use("/teams", teamsRouter);
 
