@@ -2,6 +2,9 @@ name: Testing
 
 on: push
 
+env:
+  ALLOWED_URLS: ${{ vars.ALLOWED_URLS }}
+
 jobs:
   test:
     name: Tests passes
