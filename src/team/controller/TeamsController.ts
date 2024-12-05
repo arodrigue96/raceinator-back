@@ -9,7 +9,7 @@ class TeamsController implements TeamsControllerStructure {
   getTeams = async (_req: Request, res: Response): Promise<void> => {
     const statusCode = 200;
 
-    const teams = await this.teamModel.find().exec();
+    const teams = await this.teamModel.find().sort({ name: 1 }).exec();
 
     res.status(statusCode).json({ teams });
   };

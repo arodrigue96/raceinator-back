@@ -1,7 +1,7 @@
 import request from "supertest";
 import { app } from "../index.js";
 
-describe("Given a non existing endpoint", () => {
+describe("Given a non existing GET /teams endpoint", () => {
   describe("When it receives a request", () => {
     test("Then it should respond with a 'Endpoint not found' 404 error", async () => {
       const expectedStatusCode = 404;

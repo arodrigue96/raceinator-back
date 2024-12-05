@@ -11,6 +11,7 @@ describe("Given the getTeams method of TeamsController class", () => {
   describe("When it receives a response", () => {
     const teamModelMock: Partial<Model<TeamStructure>> = {
       find: jest.fn().mockReturnValue({
+        sort: jest.fn().mockReturnThis(),
         exec: jest.fn().mockResolvedValue({
           teams: [
             {
