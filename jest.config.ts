@@ -10,6 +10,7 @@ const jestConfig: JestConfigWithTsJest = {
     "!server/startServer.ts",
     "!index.ts",
     "!database/connectToDatabase.ts",
+    "!server/detectEnviromentForCors.ts",
   ],
   coverageDirectory: "../coverage",
   ...createDefaultPreset(),
