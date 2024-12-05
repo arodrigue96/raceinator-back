@@ -22,7 +22,7 @@ afterAll(async () => {
 
 describe("Given the GET /teams endpoint", () => {
   describe("When it receives a request", () => {
-    test("Then it should response with the status 200 and a list of teams", async () => {
+    test("Then it should response with the status 200 and a list of teams with the names 'Aniol's team' and 'Erik's team'", async () => {
       const expectedStatusCode = 200;
       const path = "/teams";
 
