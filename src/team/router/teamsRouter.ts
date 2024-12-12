@@ -7,5 +7,6 @@ const teamsRouter = Router();
 const teamsController = new TeamsController(Team);
 
 teamsRouter.get("/", teamsController.getTeams);
+teamsRouter.post("/", teamsController.createTeam);
 
 export default teamsRouter;

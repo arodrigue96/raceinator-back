@@ -22,9 +22,9 @@ class TeamsController implements TeamsControllerStructure {
 
     const { name } = req.body as TeamWithoutId;
 
-    const existingTeam = await Team.findOne({ name });
+    const teamInDataBase = await Team.findOne({ name });
 
-    if (existingTeam) {
+    if (teamInDataBase) {
       throw new ServerError(
         "A team with this name already exists",
         statusCodeError,
