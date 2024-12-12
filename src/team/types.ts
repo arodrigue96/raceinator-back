@@ -9,3 +9,5 @@ export interface TeamStructure {
   debutYear: number;
   isOfficialTeam: boolean;
 }
+
+export type TeamWithoutId = Omit<TeamStructure, "_id">;
