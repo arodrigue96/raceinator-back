@@ -2,7 +2,6 @@ import { type Model } from "mongoose";
 import { type Response, type Request } from "express";
 import { type TeamStructure, type TeamWithoutId } from "../../types";
 import TeamsController from "../TeamsController";
-import Team from "../../model/Team";
 
 beforeEach(() => {
   jest.clearAllMocks();
@@ -22,7 +21,7 @@ describe("Given the method createTeam of TeamsController class", () => {
     };
 
     const teamModelMock: Partial<Model<TeamStructure>> = {
-      findOne: (Team.findOne = jest.fn().mockResolvedValue(null)),
+      findOne: jest.fn().mockResolvedValue(null),
       create: jest.fn().mockResolvedValue(aniolTeam),
     };
 

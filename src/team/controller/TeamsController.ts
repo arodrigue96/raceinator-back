@@ -1,8 +1,7 @@
 import { type Model } from "mongoose";
 import { type Request, type Response } from "express";
 import { type TeamsControllerStructure } from "./types";
-import { type TeamWithoutId, type TeamStructure } from "../types";
-import Team from "../model/Team.js";
+import { type TeamStructure } from "../types";
 import ServerError from "../../server/errors/ServerError/ServerError.js";
 
 class TeamsController implements TeamsControllerStructure {
@@ -20,9 +19,9 @@ class TeamsController implements TeamsControllerStructure {
     const statusCodeError = 409;
     const statusCode = 201;
 
-    const { name } = req.body as TeamWithoutId;
+    const { name } = req.body as TeamStructure;
 
-    const teamInDataBase = await Team.findOne({ name });
+    const teamInDataBase = await this.teamModel.findOne({ name });
 
     if (teamInDataBase) {
       throw new ServerError(
@@ -31,7 +30,7 @@ class TeamsController implements TeamsControllerStructure {
       );
     }
 
-    const newTeam = await this.teamModel.create(req.body as TeamWithoutId);
+    const newTeam = await this.teamModel.create(req.body);
 
     res.status(statusCode).json({ teams: newTeam });
   };
