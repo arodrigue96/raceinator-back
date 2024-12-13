@@ -10,6 +10,8 @@ app.disable("x-powered-by");
 
 app.use(morgan("dev"));
 
+app.use(express.json());
+
 detectEnviromentForCors(app);
 
 app.use("/teams", teamsRouter);
