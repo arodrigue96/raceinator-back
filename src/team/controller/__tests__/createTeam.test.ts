@@ -13,7 +13,7 @@ describe("Given the method createTeam of TeamsController class", () => {
       name: "Aniol's team",
       ridersNames: ["juan", "berto"],
       championshipTitles: 2,
-      imageUrl: "http://refactor",
+      imageUrl: "https://refractor.com",
       altImageText: "Aniol's images",
       description: "Aniol's hola hola",
       debutYear: 1996,
