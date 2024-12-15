@@ -1,9 +1,9 @@
-# fly.toml app configuration file generated for raceinator-back on 2024-12-15T19:08:14Z
+# fly.toml app configuration file generated for aniol-rodriguez-202409-back on 2024-12-15T19:24:25Z
 #
 # See https://fly.io/docs/reference/configuration/ for information about how to use this file.
 #
 
-app = 'raceinator-back'
+app = 'aniol-rodriguez-202409-back'
 primary_region = 'mad'
 
 [build]
