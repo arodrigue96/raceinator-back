@@ -48,9 +48,11 @@ describe("Given the deleteById method of the TeamsController class", () => {
     });
 
     test("Then it should call the response's method json with the 'Team deleted'", async () => {
+      const expectedMessage = "Team deleted";
+
       await teamsController.deleteById(req as RequestWithId, res as Response);
 
-      expect(res.json).toHaveBeenCalledWith({ message: "Team deleted" });
+      expect(res.json).toHaveBeenCalledWith({ message: expectedMessage });
     });
   });
 });
