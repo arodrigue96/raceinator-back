@@ -1,7 +1,8 @@
 import { type Model } from "mongoose";
-import { type Response, type Request } from "express";
+import { type Response } from "express";
 import { type TeamStructure, type TeamWithoutId } from "../../types";
 import TeamsController from "../TeamsController";
+import { type RequestWithTeam } from "../types";
 
 beforeEach(() => {
   jest.clearAllMocks();
@@ -29,7 +30,7 @@ describe("Given the method createTeam of TeamsController class", () => {
       teamModelMock as Model<TeamStructure>,
     );
 
-    const req: Partial<Request> = { body: aniolTeam };
+    const req: Partial<RequestWithTeam> = { body: aniolTeam };
     const res: Partial<Response> = {
       status: jest.fn().mockReturnThis(),
       json: jest.fn(),
@@ -38,13 +39,13 @@ describe("Given the method createTeam of TeamsController class", () => {
     test("Then it should call the response's method status with 201", async () => {
       const expectedStatusCode = 201;
 
-      await teamsController.createTeam(req as Request, res as Response);
+      await teamsController.createTeam(req as RequestWithTeam, res as Response);
 
       expect(res.status).toHaveBeenCalledWith(expectedStatusCode);
     });
 
     test("Then it should call the response's method json with the 'Aniol's team'", async () => {
-      await teamsController.createTeam(req as Request, res as Response);
+      await teamsController.createTeam(req as RequestWithTeam, res as Response);
 
       expect(res.json).toHaveBeenCalledWith({ teams: aniolTeam });
     });

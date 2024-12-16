@@ -8,5 +8,6 @@ const teamsController = new TeamsController(Team);
 
 teamsRouter.get("/", teamsController.getTeams);
 teamsRouter.post("/", teamsController.createTeam);
+teamsRouter.delete("/:_id", teamsController.deleteById);
 
 export default teamsRouter;
