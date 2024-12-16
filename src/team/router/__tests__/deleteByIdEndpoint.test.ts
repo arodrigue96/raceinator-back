@@ -4,6 +4,7 @@ import mongoose from "mongoose";
 import connectToDatabase from "../../../database/connectToDatabase";
 import { app } from "../../../server";
 import Team from "../../model/Team";
+import { type TeamStructure } from "../../types";
 
 let server: MongoMemoryServer;
 
@@ -21,9 +22,8 @@ afterAll(async () => {
 
 describe("Given the DELETE /teams/:id endpoint", () => {
   describe("When it receives a request with a valid id", () => {
-    test("Then it should respond with the status 200 and a 'Team deleted''", async () => {
+    test("Then it should respond with the status 200 and a 'Aniol's team''", async () => {
       const expectedStatusCode = 200;
-      const expectedMessage = "Team deleted";
 
       const newTeam = await Team.create({
         name: "Aniol's team",
@@ -40,8 +40,10 @@ describe("Given the DELETE /teams/:id endpoint", () => {
         .delete(`/teams/${newTeam._id}`)
         .expect(expectedStatusCode);
 
-      expect(response.body).toEqual({
-        message: expectedMessage,
+      expect(response.body).toMatchObject<{ team: Partial<TeamStructure> }>({
+        team: {
+          name: newTeam.name,
+        },
       });
     });
   });
@@ -64,7 +66,7 @@ describe("Given the DELETE /teams/:id endpoint", () => {
         .delete("/teams/1234567891234567891234")
         .expect(400);
 
-      expect(response.body).toEqual({
+      expect(response.body).toMatchObject({
         message: "ID is not correct",
       });
     });

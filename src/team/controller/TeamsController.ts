@@ -49,13 +49,13 @@ class TeamsController implements TeamsControllerStructure {
       throw new ServerError("ID is not correct", 400);
     }
 
-    const teamInDataBase = await this.teamModel.findByIdAndDelete(_id);
+    const team = await this.teamModel.findByIdAndDelete(_id);
 
-    if (!teamInDataBase) {
+    if (!team) {
       throw new ServerError("Team not found", 404);
     }
 
-    res.status(statusCode).json({ message: "Team deleted" });
+    res.status(statusCode).json({ team });
   };
 }
 
