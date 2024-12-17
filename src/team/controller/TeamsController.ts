@@ -39,7 +39,7 @@ class TeamsController implements TeamsControllerStructure {
     res.status(statusCode).json({ teams: newTeam });
   };
 
-  deleteById = async (req: RequestWithId, res: Response): Promise<void> => {
+  deleteTeamById = async (req: RequestWithId, res: Response): Promise<void> => {
     const idLength = 24;
     const statusCode = 200;
 
@@ -50,6 +50,25 @@ class TeamsController implements TeamsControllerStructure {
     }
 
     const team = await this.teamModel.findByIdAndDelete(_id);
+
+    if (!team) {
+      throw new ServerError("Team not found", 404);
+    }
+
+    res.status(statusCode).json({ team });
+  };
+
+  getTeamById = async (req: RequestWithId, res: Response): Promise<void> => {
+    const statusCode = 200;
+
+    const idLength = 24;
+    const { _id } = req.params;
+
+    if (_id.length !== idLength) {
+      throw new ServerError("ID is not correct", 400);
+    }
+
+    const team = await this.teamModel.findById(_id);
 
     if (!team) {
       throw new ServerError("Team not found", 404);
