@@ -8,7 +8,7 @@ afterEach(() => {
   jest.clearAllMocks();
 });
 
-describe("Given the deleteById method of the TeamsController class", () => {
+describe("Given the deleteTeamById method of the TeamsController class", () => {
   const aniolTeam: TeamStructure = {
     _id: "6760222c9f350126a80dcb71",
     name: "Aniol's team",
@@ -38,17 +38,23 @@ describe("Given the deleteById method of the TeamsController class", () => {
     json: jest.fn(),
   };
 
-  describe("When it receives a request with a valid id'", () => {
+  describe("When it receives a request with a '6760222c9f350126a80dcb71' id'", () => {
     test("Then it should call the response's method with status 200", async () => {
       const expectedStatusCode = 200;
 
-      await teamsController.deleteById(req as RequestWithId, res as Response);
+      await teamsController.deleteTeamById(
+        req as RequestWithId,
+        res as Response,
+      );
 
       expect(res.status).toHaveBeenCalledWith(expectedStatusCode);
     });
 
-    test("Then it should call the response's method json with the 'Team deleted'", async () => {
-      await teamsController.deleteById(req as RequestWithId, res as Response);
+    test("Then it should call the response's method json with the team name 'Aniol's team'", async () => {
+      await teamsController.deleteTeamById(
+        req as RequestWithId,
+        res as Response,
+      );
 
       expect(res.json).toHaveBeenCalledWith({ team: aniolTeam });
     });
