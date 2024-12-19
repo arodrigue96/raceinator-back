@@ -54,7 +54,7 @@ describe("Given the GET /teams/:_id endpoint", () => {
         .get("/teams/123456789123456789123456")
         .expect(404);
 
-      expect(response.body).toEqual({
+      expect(response.body).toStrictEqual({
         message: "Team not found",
       });
     });
@@ -66,7 +66,7 @@ describe("Given the GET /teams/:_id endpoint", () => {
         .get("/teams/1234567891234567891234")
         .expect(400);
 
-      expect(response.body).toMatchObject({
+      expect(response.body).toStrictEqual({
         message: "ID is not correct",
       });
     });

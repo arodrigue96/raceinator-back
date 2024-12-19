@@ -66,7 +66,7 @@ describe("Given the DELETE /teams/:id endpoint", () => {
         .delete("/teams/1234567891234567891234")
         .expect(400);
 
-      expect(response.body).toMatchObject({
+      expect(response.body).toStrictEqual({
         message: "ID is not correct",
       });
     });
