@@ -2,13 +2,24 @@
 
 Status: In Progress
 
+## Description
+
+Raceinator Back is a REST API designed to manage information about MotoGP racing teams. It allows you to perform CRD operations (Create, Read, Delete) on teams.
+
 ## Endpoints
 
-| Method | URL      | Description         |
-| ------ | -------- | ------------------- |
-| `GET`  | `/teams` | Retrieve all teams. |
+| Method   | URL          | Description            |
+| -------- | ------------ | ---------------------- |
+| `GET`    | `/teams`     | Retrieve all teams.    |
+| `POST`   | `/teams`     | Create a new team.     |
+| `DELETE` | `/teams`     | Delete a team by ID.   |
+| `GET`    | `/teams/:id` | Retrieve a team by ID. |
 
-### GET Response Example:
+### GET `/teams/`
+
+Retrieve all teams
+
+#### Response Example:
 
 ```json
 {
@@ -38,3 +49,96 @@ Status: In Progress
   ]
 }
 ```
+
+### POST `/teams/`
+
+Create a team
+
+#### Request Example:
+
+```json
+{
+  "name": "Yamaha Factory Racing",
+  "ridersNames": ["Fabio Quartararo", "Franco Morbidelli"],
+  "championshipTitles": 7,
+  "imageUrl": "https://example.com/yamaha-team.jpg",
+  "altImageText": "Yamaha Factory Racing team's motorbikes",
+  "description": "Yamaha Factory Racing is a prominent team in MotoGP, known for its rich history and competitive performance.",
+  "debutYear": 1999,
+  "isOfficialTeam": true
+}
+```
+
+#### Response Example:
+
+```json
+{
+  "teams": {
+    "_id": "676362ec4dfa06cc5b004046",
+    "name": "Yamaha Factory Racing",
+    "ridersNames": ["Fabio Quartararo", "Franco Morbidelli"],
+    "championshipTitles": 7,
+    "imageUrl": "https://example.com/yamaha-team.jpg",
+    "altImageText": "Yamaha Factory Racing team's motorbikes",
+    "description": "Yamaha Factory Racing is a prominent team in MotoGP, known for its rich history and competitive performance.",
+    "debutYear": 1999,
+    "isOfficialTeam": true
+  }
+}
+```
+
+### DELETE `/teams/:id`
+
+Deletes a team by ID.
+
+#### Request Example:
+
+DELETE /teams/676362ec4dfa06cc5b004046
+
+#### Response Example:
+
+```json
+{
+  "team": {
+    "_id": "676362ec4dfa06cc5b004046",
+    "name": "Yamaha Factory Racing",
+    "ridersNames": ["Fabio Quartararo", "Franco Morbidelli"],
+    "championshipTitles": 7,
+    "imageUrl": "https://example.com/yamaha-team.jpg",
+    "altImageText": "Yamaha Factory Racing team's motorbikes",
+    "description": "Yamaha Factory Racing is a prominent team in MotoGP, known for its rich history and competitive performance.",
+    "debutYear": 1999,
+    "isOfficialTeam": true
+  }
+}
+```
+
+### GET `/teams/:id`
+
+Retrieves a team by ID.
+
+#### Request Example:
+
+GET /teams/676362ec4dfa06cc5b004046
+
+#### Response Example:
+
+```json
+{
+  "team": {
+    "_id": "676362ec4dfa06cc5b004046",
+    "name": "Yamaha Factory Racing",
+    "ridersNames": ["Fabio Quartararo", "Franco Morbidelli"],
+    "championshipTitles": 7,
+    "imageUrl": "https://example.com/yamaha-team.jpg",
+    "altImageText": "Yamaha Factory Racing team's motorbikes",
+    "description": "Yamaha Factory Racing is a prominent team in MotoGP, known for its rich history and competitive performance.",
+    "debutYear": 1999,
+    "isOfficialTeam": true
+  }
+}
+```
+
+## Error Handling
+
+In case of an error, the API responds with a JSON object containing the error details. The response includes a `message` property that describes the error.
