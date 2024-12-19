@@ -1,4 +1,4 @@
-import { type Model } from "mongoose";
+import mongoose, { type Model } from "mongoose";
 import { type Request, type Response } from "express";
 import {
   type RequestWithId,
@@ -40,12 +40,11 @@ class TeamsController implements TeamsControllerStructure {
   };
 
   deleteTeamById = async (req: RequestWithId, res: Response): Promise<void> => {
-    const idLength = 24;
     const statusCode = 200;
 
     const { _id } = req.params;
 
-    if (_id.length !== idLength) {
+    if (!mongoose.isValidObjectId(_id)) {
       throw new ServerError("ID is not correct", 400);
     }
 
@@ -61,10 +60,9 @@ class TeamsController implements TeamsControllerStructure {
   getTeamById = async (req: RequestWithId, res: Response): Promise<void> => {
     const statusCode = 200;
 
-    const idLength = 24;
     const { _id } = req.params;
 
-    if (_id.length !== idLength) {
+    if (!mongoose.isValidObjectId(_id)) {
       throw new ServerError("ID is not correct", 400);
     }
 
