@@ -4,7 +4,7 @@ Status: In Progress
 
 ## Description
 
-Raceinator Back is a REST API designed to manage information about MotoGP racing teams. It allows you to perform CRD operations (Create, Read, Delete) on teams.
+Raceinator Back is a REST API designed to manage information about MotoGP racing teams. It allows you to perform CRUD operations (Create, Read, Delete) on teams.
 
 ## Endpoints
 
