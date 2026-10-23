@@ -16,12 +16,12 @@
 ## Phase 3: US1 — Restore defaults (P1)
 - [x] T020 [back] Failing test: reset replaces collection with exactly the 11 defaults
 - [x] T021 [back] `defaultTeams.ts` (validated at startup) + `POST /teams/reset` + README
-- [ ] T022 [front] Failing test: "Restore teams" button → calls API, list shows returned teams, success toast; error toast on failure
-- [ ] T023 [front] `TeamsClient.resetTeams`, button in `TeamsPage`
+- [x] T022 [front] Failing test: "Restore teams" button → calls API, list shows returned teams, success toast; error toast on failure
+- [x] T023 [front] `TeamsClient.resetTeams`, button in `TeamsPage`
 
 ## Phase 4: US3 — Form guides valid input (P2)
-- [ ] T030 [front] Form constraints mirroring FR-002; 400 → "invalid data" toast; tests
+- [x] T030 [front] Form constraints mirroring FR-002; 400 → "invalid data" toast; tests
 
 ## Phase 5: Polish & verification
-- [ ] T040 Both repos: branch → CI green (Testing + Code audit) → fast-forward `main`
-- [ ] T041 Deploy back (Dokploy) and front (Netlify auto); prod smoke SC-001/SC-002 with curl
+- [x] T040 Both repos: branch → CI green (Testing + Code audit) → fast-forward `main`
+- [x] T041 Deploy back (Dokploy) and front (Netlify auto); prod smoke SC-001/SC-002 with curl
