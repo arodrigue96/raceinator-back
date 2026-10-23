@@ -40,7 +40,8 @@ const post = async (body: unknown, clientIp = `client-${Math.random()}`) =>
   request(app)
     .post("/teams")
     .set("x-client-ip", clientIp)
-    .send(body as Record<string, unknown>);
+    .type("json")
+    .send(typeof body === "string" ? body : JSON.stringify(body));
 
 describe("Given the POST /teams endpoint with crafted payloads", () => {
   const abusePayloads: Array<[string, unknown]> = [
@@ -53,9 +54,8 @@ describe("Given the POST /teams endpoint with crafted payloads", () => {
     ["an unknown $where key", { ...validTeam, $where: "sleep(1000)" }],
     [
       "a __proto__ key",
-      JSON.parse(
-        `{"__proto__":{"isAdmin":true},${JSON.stringify(validTeam).slice(1)}`,
-      ) as unknown,
+      // Raw JSON: a JS object would lose the __proto__ key before reaching the server
+      `{"__proto__":{"isAdmin":true},${JSON.stringify(validTeam).slice(1)}`,
     ],
     ["no riders", { ...validTeam, ridersNames: [] }],
     [
