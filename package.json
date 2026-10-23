@@ -9,9 +9,9 @@
     "build:dev": "tsc -w",
     "start": "node dist/index.js",
     "start:dev": "node --env-file=.env .",
-    "test": "jest",
-    "test:dev": "jest --watchAll",
-    "test:coverage": "jest --coverage"
+    "test": "NODE_OPTIONS=--experimental-vm-modules jest",
+    "test:dev": "NODE_OPTIONS=--experimental-vm-modules jest --watchAll",
+    "test:coverage": "NODE_OPTIONS=--experimental-vm-modules jest --coverage"
   },
   "keywords": [],
   "author": "",
