@@ -16,8 +16,8 @@ beforeAll(async () => {
 });
 
 afterAll(async () => {
-  await server.stop();
   await mongoose.connection.close();
+  await server.stop();
 });
 
 describe("Given the GET /teams endpoint", () => {
