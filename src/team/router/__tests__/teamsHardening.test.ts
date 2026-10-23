@@ -74,6 +74,7 @@ describe("Given the POST /teams endpoint with crafted payloads", () => {
     ],
     [
       "a javascript: imageUrl",
+      // eslint-disable-next-line no-script-url
       { ...validTeam, imageUrl: "javascript:alert(1)" },
     ],
     [

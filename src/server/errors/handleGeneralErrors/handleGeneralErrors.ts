@@ -14,9 +14,17 @@ const handleGeneralErrors = (
   const serverErrorStatusCode = 500;
   const serverErrorMessage = "Server Error";
 
+  const bodyParserMessages = new Map([
+    ["entity.too.large", "Request body is too large"],
+    ["entity.parse.failed", "Invalid JSON body"],
+  ]);
+
   const statusCode = error.statusCode ?? serverErrorStatusCode;
   const errorMessage =
-    statusCode === serverErrorStatusCode ? serverErrorMessage : error.message;
+    statusCode >= serverErrorStatusCode
+      ? serverErrorMessage
+      : (bodyParserMessages.get((error as { type?: string }).type ?? "") ??
+        error.message);
 
   res.status(statusCode).json({ message: errorMessage });
 };

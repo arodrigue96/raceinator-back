@@ -6,6 +6,7 @@ export interface TeamsControllerStructure {
   createTeam: (req: Request, res: Response) => Promise<void>;
   deleteTeamById: (req: Request, res: Response) => Promise<void>;
   getTeamById: (req: Request, res: Response) => Promise<void>;
+  resetTeams: (req: Request, res: Response) => Promise<void>;
 }
 
 export type RequestWithTeam = Request<unknown, unknown, TeamWithoutId>;
