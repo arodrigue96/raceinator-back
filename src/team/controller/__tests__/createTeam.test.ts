@@ -22,6 +22,7 @@ describe("Given the method createTeam of TeamsController class", () => {
     };
 
     const teamModelMock: Partial<Model<TeamStructure>> = {
+      countDocuments: jest.fn().mockResolvedValue(0),
       findOne: jest.fn().mockResolvedValue(null),
       create: jest.fn().mockResolvedValue(aniolTeam),
     };

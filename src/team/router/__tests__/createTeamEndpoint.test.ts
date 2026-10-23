@@ -28,7 +28,7 @@ describe("Given the POST /teams endpoint", () => {
     championshipTitles: 2,
     imageUrl: "https://refractor.com",
     altImageText: "kljkl",
-    description: "kljkl",
+    description: "A team created by the endpoint test.",
     debutYear: 1996,
     isOfficialTeam: true,
   };
