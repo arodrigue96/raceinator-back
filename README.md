@@ -10,23 +10,25 @@ Raceinator Back is a REST API designed to manage information about MotoGP racing
 
 - API: https://raceinator-api.aniol-rodriguez.workers.dev (Cloudflare Worker proxy in front of the server)
 - Runs on Dokploy (Nixpacks, Node 22), MongoDB 8 on a private network.
-- Env vars: `DATABASE_URL`, `ALLOWED_URLS` (comma-separated CORS origins), `PORT`.
-- Seed data (2026 MotoGP grid): `data/teams2026.json`. Load it with:
-
-```sh
-jq -c '.[]' data/teams2026.json | while read -r t; do
-  printf '%s' "$t" | curl -s -X POST -H 'content-type: application/json' --data-binary @- "$API_URL/teams"
-done
-```
+- Env vars: `DATABASE_URL`, `ALLOWED_URLS` (comma-separated CORS origins), `PORT`; optional `WRITE_RATE_LIMIT` (default 30) and `RESET_RATE_LIMIT` (default 10) per client per 15 min.
+- Default teams (2026 MotoGP grid): `data/teams2026.json`, validated at startup. Restore them with `curl -X POST "$API_URL/teams/reset"`.
 
 ## Endpoints
 
-| Method   | URL          | Description            |
-| -------- | ------------ | ---------------------- |
-| `GET`    | `/teams`     | Retrieve all teams.    |
-| `POST`   | `/teams`     | Create a new team.     |
-| `DELETE` | `/teams`     | Delete a team by ID.   |
-| `GET`    | `/teams/:id` | Retrieve a team by ID. |
+| Method   | URL            | Description                          |
+| -------- | -------------- | ------------------------------------ |
+| `GET`    | `/teams`       | Retrieve all teams.                  |
+| `POST`   | `/teams`       | Create a new team.                   |
+| `DELETE` | `/teams/:id`   | Delete a team by ID.                 |
+| `GET`    | `/teams/:id`   | Retrieve a team by ID.               |
+| `POST`   | `/teams/reset` | Replace all teams with the defaults. |
+
+### Validation and limits
+
+- `POST /teams` body is strict (unknown keys → 400): `name` 2-60 chars (unique, 409), `ridersNames` 1-4 items of 2-60 chars, `championshipTitles` integer 0-99, `debutYear` integer 1949-current year, `imageUrl` ≤ 500 chars, `https://` URL or `/images/teams/<a-z0-9->.webp`, `altImageText` 2-150, `description` 10-1000, `isOfficialTeam` boolean.
+- `:id` must be a 24-hex ObjectId → otherwise 400.
+- Body over 10 kB → 413; invalid JSON → 400; more than 50 teams → 422.
+- Rate limit per client IP (`x-client-ip` from the Worker, else socket IP): writes 30 / 15 min, reset 10 / 15 min → 429.
 
 ### GET `/teams/`
 
@@ -151,6 +153,10 @@ GET /teams/676362ec4dfa06cc5b004046
   }
 }
 ```
+
+### POST `/teams/reset`
+
+Deletes every team and inserts the defaults from `data/teams2026.json`. Responds `200` with `{ "teams": [...] }` sorted by name, same shape as `GET /teams`.
 
 ## Error Handling
 

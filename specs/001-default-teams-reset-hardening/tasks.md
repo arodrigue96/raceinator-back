@@ -3,19 +3,19 @@
 **Input**: [spec.md](./spec.md), [plan.md](./plan.md)
 
 ## Phase 1: Setup
-- [ ] T001 [back] Add `zod`, `express-rate-limit`, `helmet` (latest, `npm audit` 0)
-- [ ] T002 [back] `data/teams2026.json` imageUrls as relative `/images/teams/*.webp` paths
+- [x] T001 [back] Add `zod`, `express-rate-limit`, `helmet` (latest, `npm audit` 0)
+- [x] T002 [back] `data/teams2026.json` imageUrls as relative `/images/teams/*.webp` paths
 
 ## Phase 2: US2 — Injection-proof writes (P1)
-- [ ] T010 [back] Failing tests: abuse payloads (operators, unknown keys, bad imageUrl, bad id, 10 kB+, cap 50) → 4xx
-- [ ] T011 [back] Zod schemas + `validate` middleware on POST /teams, GET/DELETE /teams/:id
-- [ ] T012 [back] `express.json({limit:"10kb"})`, 413/400 mapping in `handleGeneralErrors`, `helmet()`, `sanitizeFilter`
-- [ ] T013 [back] Team cap 50 → 422 in `createTeam`
-- [ ] T014 [back] Rate limiters keyed by `x-client-ip` (set by the Worker) (test with a low limit via env in test)
+- [x] T010 [back] Failing tests: abuse payloads (operators, unknown keys, bad imageUrl, bad id, 10 kB+, cap 50) → 4xx
+- [x] T011 [back] Zod schemas + `validate` middleware on POST /teams, GET/DELETE /teams/:id
+- [x] T012 [back] `express.json({limit:"10kb"})`, 413/400 mapping in `handleGeneralErrors`, `helmet()`, `sanitizeFilter`
+- [x] T013 [back] Team cap 50 → 422 in `createTeam`
+- [x] T014 [back] Rate limiters keyed by `x-client-ip` (set by the Worker) (test with a low limit via env in test)
 
 ## Phase 3: US1 — Restore defaults (P1)
-- [ ] T020 [back] Failing test: reset replaces collection with exactly the 11 defaults
-- [ ] T021 [back] `defaultTeams.ts` (validated at startup) + `POST /teams/reset` + README
+- [x] T020 [back] Failing test: reset replaces collection with exactly the 11 defaults
+- [x] T021 [back] `defaultTeams.ts` (validated at startup) + `POST /teams/reset` + README
 - [ ] T022 [front] Failing test: "Restore teams" button → calls API, list shows returned teams, success toast; error toast on failure
 - [ ] T023 [front] `TeamsClient.resetTeams`, button in `TeamsPage`
 
