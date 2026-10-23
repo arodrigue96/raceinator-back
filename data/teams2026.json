@@ -1,0 +1,145 @@
+[
+  {
+    "name": "Ducati Lenovo Team",
+    "ridersNames": [
+      "Francesco Bagnaia",
+      "Marc Marquez"
+    ],
+    "championshipTitles": 4,
+    "imageUrl": "https://aniol-rodriguez-202409-front.netlify.app/images/teams/ducati-lenovo-team.webp",
+    "altImageText": "Ducati Lenovo Team rider leaning into a corner on the red 2026 Desmosedici GP",
+    "description": "Based in Bologna, Italy, Ducati Corse runs the Desmosedici GP in 2026. The factory squad has taken premier-class titles with Casey Stoner (2007), Francesco Bagnaia (2022, 2023) and Marc Marquez (2025).",
+    "debutYear": 2003,
+    "isOfficialTeam": true
+  },
+  {
+    "name": "Aprilia Racing",
+    "ridersNames": [
+      "Marco Bezzecchi",
+      "Jorge Martin"
+    ],
+    "championshipTitles": 0,
+    "imageUrl": "https://aniol-rodriguez-202409-front.netlify.app/images/teams/aprilia-racing.webp",
+    "altImageText": "Aprilia Racing rider in the garage wearing the black 2026 team leathers",
+    "description": "Based in Noale, Italy, Aprilia Racing fields the RS-GP in 2026. Aprilia has no premier-class riders' title yet, but has become a regular race winner since 2022.",
+    "debutYear": 2002,
+    "isOfficialTeam": true
+  },
+  {
+    "name": "BK8 Gresini Racing MotoGP",
+    "ridersNames": [
+      "Fermin Aldeguer",
+      "Alex Marquez"
+    ],
+    "championshipTitles": 0,
+    "imageUrl": "https://aniol-rodriguez-202409-front.netlify.app/images/teams/bk8-gresini-racing-motogp.webp",
+    "altImageText": "Alex Marquez on the grid on the white and blue BK8 Gresini Ducati",
+    "description": "Based in Faenza, Italy, Gresini Racing runs the Ducati Desmosedici GP as an independent team in 2026. Founded by Fausto Gresini, it is one of the grid's longest-running satellite squads.",
+    "debutYear": 2002,
+    "isOfficialTeam": false
+  },
+  {
+    "name": "Honda HRC Castrol",
+    "ridersNames": [
+      "Luca Marini",
+      "Joan Mir"
+    ],
+    "championshipTitles": 19,
+    "imageUrl": "https://aniol-rodriguez-202409-front.netlify.app/images/teams/honda-hrc-castrol.webp",
+    "altImageText": "Luca Marini and Joan Mir in red, white and blue Honda HRC Castrol leathers",
+    "description": "Honda's factory team is based in Japan and races the RC213V in 2026. Honda is the most successful manufacturer in premier-class history, with titles for Spencer, Gardner, Doohan, Rossi, Hayden, Stoner and Marquez.",
+    "debutYear": 1966,
+    "isOfficialTeam": true
+  },
+  {
+    "name": "Honda LCR",
+    "ridersNames": [
+      "Johann Zarco",
+      "Diogo Moreira"
+    ],
+    "championshipTitles": 0,
+    "imageUrl": "https://aniol-rodriguez-202409-front.netlify.app/images/teams/honda-lcr.webp",
+    "altImageText": "Johann Zarco posing in the green, white and red LCR Honda leathers in the studio",
+    "description": "Run by Lucio Cecchinello from Monaco, LCR races the Honda RC213V as a satellite team. Rookie Diogo Moreira joins veteran Johann Zarco in 2026.",
+    "debutYear": 2006,
+    "isOfficialTeam": false
+  },
+  {
+    "name": "Monster Energy Yamaha MotoGP",
+    "ridersNames": [
+      "Fabio Quartararo",
+      "Alex Rins"
+    ],
+    "championshipTitles": 18,
+    "imageUrl": "https://aniol-rodriguez-202409-front.netlify.app/images/teams/monster-energy-yamaha-motogp.webp",
+    "altImageText": "Fabio Quartararo and Alex Rins shaking hands between their blue Monster Energy Yamaha YZR-M1 bikes",
+    "description": "Yamaha's factory team is based in Iwata, Japan, and races the YZR-M1 in 2026. Yamaha has won premier-class titles with Roberts, Lawson, Rainey, Rossi, Lorenzo and Quartararo.",
+    "debutYear": 1973,
+    "isOfficialTeam": true
+  },
+  {
+    "name": "Pertamina Enduro VR46 Racing Team",
+    "ridersNames": [
+      "Franco Morbidelli",
+      "Fabio Di Giannantonio"
+    ],
+    "championshipTitles": 0,
+    "imageUrl": "https://aniol-rodriguez-202409-front.netlify.app/images/teams/pertamina-enduro-vr46-racing-team.webp",
+    "altImageText": "Top view of the two fluorescent yellow and black Pertamina Enduro VR46 Ducati bikes",
+    "description": "Founded by Valentino Rossi and based in Tavullia, Italy, the team runs the Ducati Desmosedici GP in 2026. It entered MotoGP in 2022.",
+    "debutYear": 2022,
+    "isOfficialTeam": false
+  },
+  {
+    "name": "Prima Pramac Yamaha MotoGP",
+    "ridersNames": [
+      "Toprak Razgatlioglu",
+      "Jack Miller"
+    ],
+    "championshipTitles": 1,
+    "imageUrl": "https://aniol-rodriguez-202409-front.netlify.app/images/teams/prima-pramac-yamaha-motogp.webp",
+    "altImageText": "Jack Miller and Toprak Razgatlioglu in purple and blue Prima Pramac Yamaha leathers with team management",
+    "description": "Based in Italy, Pramac switched from Ducati to Yamaha in 2026 and races the YZR-M1. Jorge Martin won the 2024 title with the team on a Ducati.",
+    "debutYear": 2002,
+    "isOfficialTeam": false
+  },
+  {
+    "name": "Red Bull KTM Factory Racing",
+    "ridersNames": [
+      "Brad Binder",
+      "Pedro Acosta"
+    ],
+    "championshipTitles": 0,
+    "imageUrl": "https://aniol-rodriguez-202409-front.netlify.app/images/teams/red-bull-ktm-factory-racing.webp",
+    "altImageText": "Pedro Acosta, Brad Binder, Enea Bastianini and Maverick Vinales on their orange Red Bull KTM RC16 bikes",
+    "description": "Based in Mattighofen, Austria, KTM races the RC16 in 2026. The factory has won Grands Prix since 2020 but no premier-class title yet.",
+    "debutYear": 2017,
+    "isOfficialTeam": true
+  },
+  {
+    "name": "Red Bull KTM Tech3",
+    "ridersNames": [
+      "Maverick Vinales",
+      "Enea Bastianini"
+    ],
+    "championshipTitles": 0,
+    "imageUrl": "https://aniol-rodriguez-202409-front.netlify.app/images/teams/red-bull-ktm-tech3.webp",
+    "altImageText": "Maverick Vinales smiling next to his Red Bull KTM Tech3 RC16",
+    "description": "Founded by Herve Poncharal in France, Tech3 runs KTM RC16 bikes as KTM's satellite team. Vinales and Bastianini both carry race-winning experience.",
+    "debutYear": 2001,
+    "isOfficialTeam": false
+  },
+  {
+    "name": "SuperFile Trackhouse MotoGP Team",
+    "ridersNames": [
+      "Raul Fernandez",
+      "Ai Ogura"
+    ],
+    "championshipTitles": 0,
+    "imageUrl": "https://aniol-rodriguez-202409-front.netlify.app/images/teams/superfile-trackhouse-motogp-team.webp",
+    "altImageText": "Ai Ogura seated in the garage wearing the black and neon yellow SuperFile Trackhouse leathers",
+    "description": "The American Trackhouse squad took over the former RNF entry in 2024 and races the Aprilia RS-GP. It is an independent team.",
+    "debutYear": 2024,
+    "isOfficialTeam": false
+  }
+]

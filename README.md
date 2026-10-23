@@ -6,6 +6,19 @@ Status: In Progress
 
 Raceinator Back is a REST API designed to manage information about MotoGP racing teams. It allows you to perform CRUD operations (Create, Read, Delete) on teams.
 
+## Deployment
+
+- API: https://raceinator-api.aniol-rodriguez.workers.dev (Cloudflare Worker proxy in front of the server)
+- Runs on Dokploy (Nixpacks, Node 22), MongoDB 8 on a private network.
+- Env vars: `DATABASE_URL`, `ALLOWED_URLS` (comma-separated CORS origins), `PORT`.
+- Seed data (2026 MotoGP grid): `data/teams2026.json`. Load it with:
+
+```sh
+jq -c '.[]' data/teams2026.json | while read -r t; do
+  printf '%s' "$t" | curl -s -X POST -H 'content-type: application/json' --data-binary @- "$API_URL/teams"
+done
+```
+
 ## Endpoints
 
 | Method   | URL          | Description            |
